@@ -1,0 +1,6 @@
+{
+  "name": "stackoverflow",
+  "dependencies": {
+    "@dataform/core": "2.4.2"
+  }
+}

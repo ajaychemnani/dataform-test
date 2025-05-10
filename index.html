@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ACHEdu - Retro-Futuristic Tech Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif; /* Changed font to Roboto */
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #4a90e2;
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    #menu-toggle {
+      background-color: #4a90e2;
+      color: #ffffff;
+      font-size: 1.5rem;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    nav {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: #4a90e2; /* Match top navigation background color */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      display: block;
+      padding: 8px 20px;
+      color: #ffffff;  /* Font color changed to white */
+      text-decoration: none;
+      font-size: 0.9rem;  /* Smaller font size */
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      background-color: #e3eaf2;
+      color: #2c6fc4;
+    }
+
+    #main-content {
+      margin-top: 100px;
+      padding: 30px;
+    }
+
+    .section {
+      padding: 50px;
+      margin: 20px 0;
+      border-radius: 8px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      color: #3b4c66;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    footer {
+      background-color: #dce3ea;
+      padding: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    footer a {
+      color: #4a90e2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      color: #2c6fc4;
+    }
+
+    /* Mobile-first (hamburger is shown) */
+    #menu-toggle {
+      display: block;
+    }
+
+    nav {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      /* On larger screens, show the nav inline */
+      nav {
+        display: flex !important;
+        position: static;
+        background: none;
+        box-shadow: none;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 0;
+        font-size: 0.9rem; /* Smaller font size */
+      }
+
+      #menu-toggle {
+        display: none !important; /* Hide hamburger button */
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Portfolio Section Styles */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Three columns */
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .video-item {
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-item img {
+      width: 100%;
+      height: auto;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .video-item p {
+      padding: 10px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .video-item a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: repeat(1, 1fr); /* One column on small screens */
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">ACHEdu</div>
+    <button id="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <div id="main-content">
+    <section id="home" class="section">
+      <h2>Home</h2>
+      <p>Welcome to ACHEdu. Your gateway to the future of tech education.</p>
+    </section>
+
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <p>Explore our offerings in tech education and training programs.</p>
+    </section>
+
+    <section id="portfolio" class="section">
+      <h2>Portfolio</h2>
+      <p>Our success stories and projects that showcase the impact of ACHEdu.</p>
+      
+      <div class="video-grid">
+        <div class="video-item">
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <img src="https://via.placeholder.com/300x200?text=Video+1" alt="Video 1">
+            <p>Video 1</p>
+          </a>
+        </div>
+        <div class="video-item">
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <img src="https://via.placeholder.com/300x200?text=Video+2" alt="Video 2">
+            <p>Video 2</p>
+          </a>
+        </div>
+        <div class="video-item">
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <img src="https://via.placeholder.com/300x200?text=Video+3" alt="Video 3">
+            <p>Video 3</p>
+          </a>
+        </div>
+        <div class="video-item">
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <img src="https://via.placeholder.com/300x200?text=Video+4" alt="Video 4">
+            <p>Video 4</p>
+          </a>
+        </div>
+        <div class="video-item">
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <img src="https://via.placeholder.com/300x200?text=Video+5" alt="Video 5">
+            <p>Video 5</p>
+          </a>
+        </div>
+        <div class="video-item">
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <img src="https://via.placeholder.com/300x200?text=Video+6" alt="Video 6">
+            <p>Video 6</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:ajay@achedu.com">ajay@achedu.com</a></p>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>Learn more about ACHEdu, our mission, and our vision for the future of education.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 ACHEdu. All rights reserved.</p>
+    <p>Contact us: <a href="mailto:ajay@achedu.com">ajay@achedu.com</a></p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav');
+      const isVisible = nav.style.display === 'block';
+      nav.style.display = isVisible ? 'none' : 'block';
+    }
+
+    // Hide dropdown menu when a nav link is clicked on small screens
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          document.getElementById('nav').style.display = 'none';
+        }
+      });
+    });
+
+    // Ensure correct menu state on resize
+    window.addEventListener('resize', () => {
+      const nav = document.getElementById('nav');
+      if (window.innerWidth >= 768) {
+        nav.style.display = 'flex';
+      } else {
+        nav.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
